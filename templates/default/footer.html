@@ -1,6 +1,22 @@
 <footer>
     <div class="footleft">
         <a href="index.php?page=19" {{=it.c.config.kindleHack}}><div title="{{=it.c.i18n.customizeTitle}}" class="hicon hicon32"><i class="icon-wrench icon-2x"></i></div></a>
+<input id="fileupload" type="file" name="files[]" data-url="upload/server/php/" multiple>
+<script src="upload/js/vendor/jquery.ui.widget.js"></script>
+<script src="upload/js/jquery.iframe-transport.js"></script>
+<script src="upload/js/jquery.fileupload.js"></script>
+<script>
+$(function () {
+    $('#fileupload').fileupload({
+        dataType: 'json',
+        done: function (e, data) {
+            $.each(data.result.files, function (index, file) {
+                $('<p/>').text(file.name).appendTo(document.body);
+            });
+        }
+    });
+});
+</script>
     </div>
     <div class="footright">
         <a class="fancyabout" href="{{=it.abouturl}}" {{=it.c.config.kindleHack}}><div title="{{=it.c.i18n.aboutTitle}}" class="hicon hicon32"><i class="icon-info-sign icon-2x"></i></div></a>
