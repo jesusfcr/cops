@@ -21,3 +21,8 @@
      *  0 : disable
      */
     $config['cops_use_url_rewriting'] = "0";
+
+    /*
+     * The id of the Tag Manager container to use to track info
+     */
+    //$config['tag_manager'] = "GTM-XXXXXXX";
